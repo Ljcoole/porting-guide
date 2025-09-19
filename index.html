@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>US &amp; Canada Number Porting Guide</title>
+  <!--
+    This page hosts a self‑contained guide for porting telephone numbers
+    into and out of the most common VoIP providers in the US and Canada.
+    It’s built without external dependencies so it can run offline.  A
+    small amount of CSS defines a clean, modern look reminiscent of
+    Apple’s design language.  All interactive behaviour is driven by
+    `script.js`.
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site‑header" id="top">
+    <div class="container header‑inner">
+      <!-- Branding: Cloud Warriors logo and title -->
+      <div class="brand">
+        <img src="cloud-warriors-logo.png" alt="Cloud Warriors logo" class="logo" />
+        <span class="brand‑name">Cloud Warriors</span>
+      </div>
+      <nav class="site‑nav">
+        <a href="#providers">Playbooks</a>
+        <a href="#scheduling">Scheduling</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+    <!-- Hero title under nav for large headline -->
+    <div class="container hero">
+      <h1 class="hero‑title">US &amp; Canada Number Porting Guide</h1>
+      <p class="hero‑subtitle">One stop portal for porting into and out of RingCentral, GoTo, Teams, 8x8 &amp; Zoom.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Search / AI section -->
+    <section class="search‑section">
+      <div class="search‑box">
+        <div class="search‑icon" id="iconSearch"></div>
+        <input id="searchInput" type="text" placeholder="Ask anything: &quot;When do Zoom ports cut over?&quot; &quot;Do I need a PIN to port out of GoTo?&quot;">
+      </div>
+      <div id="searchResults" class="search‑results"></div>
+    </section>
+
+    <!-- Quick facts -->
+    <section class="facts">
+      <div class="fact">
+        <div class="fact‑icon" id="iconShield"></div>
+        <div class="fact‑content">
+          <div class="fact‑title">Keep service active</div>
+          <div class="fact‑text">Never cancel the losing carrier until the port completes.  Use a recent bill/CSR to match info exactly.</div>
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact‑icon" id="iconFile"></div>
+        <div class="fact‑content">
+          <div class="fact‑title">Core documents</div>
+          <div class="fact‑text">LOA/e‑LOA, Account #, Service address, Authorized name, wireless/VoIP PIN (if any), recent bill/CSR.</div>
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact‑icon" id="iconClock"></div>
+        <div class="fact‑content">
+          <div class="fact‑title">Timelines</div>
+          <div class="fact‑text">Local ports typically complete within 5–10 business days.  Toll‑free ports are often 2–5 business days.  Large batches can take 2–4 weeks.  Canadian ports may trend longer.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Provider playbooks -->
+    <section class="providers" id="providers">
+      <h2 class="section‑title">Provider Playbooks</h2>
+      <div id="providerList" class="provider‑list"></div>
+    </section>
+
+    <!-- Scheduling cheat sheet -->
+    <section class="scheduling" id="scheduling">
+      <h2 class="section‑title">Cutover Scheduling Cheat Sheet</h2>
+      <div id="scheduleList" class="schedule‑list"></div>
+    </section>
+
+    <!-- About section -->
+    <section class="about" id="about">
+      <h2 class="section‑title">About Cloud Warriors</h2>
+      <p class="about‑text">
+        Cloud Warriors is your trusted partner for unified communications. We specialise in porting voice numbers and managing VoIP systems for resellers and managed service providers across the US and Canada. Our mission is to simplify telephony migrations so your team can focus on delivering exceptional service.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site‑footer">
+    Built for resellers/MSPs handling US &amp; Canada ports.  Always verify current provider requirements and keep losing service active until completion.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

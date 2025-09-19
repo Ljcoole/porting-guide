@@ -1,0 +1,481 @@
+/*
+ * Stylesheet for the number porting guide
+ *
+ * The goal of this stylesheet is to produce a simple, modern design
+ * inspired by the minimalist aesthetic of Apple’s marketing pages.
+ * There are no external dependencies: everything is self contained.
+ */
+
+/* CSS reset and base variables */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #334155;
+  --subtext-color: #475569;
+  --muted-color: #64748b;
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #ffffff;
+  --border-color: #e2e8f0;
+  --card-bg: #ffffff;
+  --primary-color: #2563eb;
+  --radius: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-color);
+  background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout helper */
+.container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Header */
+.site‑header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  /* Use a dark header to complement the Cloud Warriors branding. */
+  background: #000000;
+  color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Branding area: align logo and brand name */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.brand‑name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Top navigation */
+.site‑nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.site‑nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+.site‑nav a:hover {
+  opacity: 0.75;
+}
+
+/* Hero section below the header nav */
+.hero {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+.hero‑title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  /* In the hero area, set white text to contrast with the dark header background */
+  color: #ffffff;
+}
+.hero‑subtitle {
+  font-size: 1rem;
+  color: #cbd5e1;
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About section */
+.about {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.about‑text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--subtext-color);
+  max-width: 60rem;
+}
+.header‑inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.header‑title {
+  color: inherit;
+}
+/* Cloud Warriors logo styling */
+.logo {
+  height: 2rem;
+  width: auto;
+}
+.header‑icon {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+}
+.header‑icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.header‑title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Search section */
+.search‑section {
+  margin-top: 1.5rem;
+}
+.search‑box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--card-bg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.search‑box .search‑icon {
+  display: flex;
+  align-items: center;
+  color: var(--muted-color);
+}
+.search‑box .search‑icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.search‑box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-color);
+  min-width: 0;
+}
+.search‑box input::placeholder {
+  color: var(--muted-color);
+}
+.search‑results {
+  margin-top: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: none;
+}
+.search‑results.visible {
+  display: block;
+}
+.search‑results .result‑item {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.search‑results .result‑item:last-child {
+  border-bottom: none;
+}
+.result‑question {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+.result‑answer {
+  color: var(--subtext-color);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* Facts section */
+.facts {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (min-width: 768px) {
+  .facts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.fact‑icon {
+  display: flex;
+  align-items: center;
+  color: var(--primary-color);
+}
+.fact‑icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+}
+.fact‑title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.fact‑text {
+  font-size: 0.875rem;
+  color: var(--subtext-color);
+  line-height: 1.4;
+}
+
+/* Providers section */
+.providers {
+  margin-top: 2rem;
+}
+.section‑title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.provider‑list {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .provider‑list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.provider‑card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.provider‑header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.provider‑header:hover {
+  background-color: #f1f5f9;
+}
+.provider‑info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+.provider‑info‑title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.provider‑info‑summary {
+  font-size: 0.875rem;
+  color: var(--subtext-color);
+  line-height: 1.4;
+}
+.provider‑toggle {
+  display: flex;
+  align-items: center;
+  color: var(--muted-color);
+}
+.provider‑toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+.provider‑body {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  display: none;
+}
+.provider‑body.open {
+  display: block;
+}
+.provider‑body .row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  align-items: start;
+}
+.provider‑body .row:last-child {
+  margin-bottom: 0;
+}
+.provider‑body .row‑label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--subtext-color);
+}
+.provider‑body .row‑value {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+.provider‑body .docs {
+  margin-bottom: 0.75rem;
+}
+.provider‑body .docs‑title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--subtext-color);
+  margin-bottom: 0.25rem;
+}
+.provider‑body .docs ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+.provider‑body .docs li {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+.provider‑body .docs li:last-child {
+  margin-bottom: 0;
+}
+.provider‑body .links {
+  margin-top: 0.75rem;
+}
+
+/* Steps section for detailed guides */
+.provider‑body .steps {
+  margin-top: 0.75rem;
+}
+.provider‑body .steps‑title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--subtext-color);
+  margin-bottom: 0.25rem;
+}
+.provider‑body .steps ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+.provider‑body .steps li {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+.provider‑body .steps li:last-child {
+  margin-bottom: 0;
+}
+
+/* Highlight bold text within steps */
+.provider‑body .steps li strong {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.provider‑body .links‑title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--subtext-color);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.provider‑body .link‑chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.provider‑body .chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: var(--primary-color);
+  background: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.provider‑body .chip:hover {
+  background: #f1f5f9;
+}
+.provider‑body .chip svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--primary-color);
+}
+
+/* Scheduling section */
+.scheduling {
+  margin-top: 2rem;
+}
+.schedule‑list {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .schedule‑list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.schedule‑card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+.schedule‑card‑title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.schedule‑card ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+.schedule‑card li {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+.schedule‑card li:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.site‑footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted-color);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
