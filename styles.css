@@ -84,24 +84,31 @@ body {
 }
 
 /* Hero section below the header nav */
+/* Hero section: large splash area with background image */
 .hero {
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  position: relative;
+  padding: 5rem 1rem 6rem;
   text-align: center;
+  /* Use a gradient overlay on top of the background image to ensure legibility */
+  /* Use a slightly lighter dark overlay on top of the hero background so the artwork remains visible */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
 }
 .hero‑title {
-  font-size: 2.25rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  /* In the hero area, set white text to contrast with the dark header background */
+  margin-bottom: 0.75rem;
   color: #ffffff;
 }
 .hero‑subtitle {
-  font-size: 1rem;
-  color: #cbd5e1;
-  max-width: 40rem;
+  font-size: 1.125rem;
+  color: #e2e8f0;
+  max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 /* About section */
@@ -116,6 +123,27 @@ body {
   line-height: 1.6;
   color: var(--subtext-color);
   max-width: 60rem;
+}
+
+/* Support section */
+.support {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+.support‑text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--subtext-color);
+  max-width: 60rem;
+}
+.support‑text a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.support‑text a:hover {
+  text-decoration: underline;
 }
 .header‑inner {
   display: flex;
@@ -395,6 +423,17 @@ body {
 .provider‑body .steps li strong {
   font-weight: 600;
   color: var(--primary-color);
+}
+
+/* Provider image inside details */
+.provider‑body .provider‑image {
+  display: block;
+  /* Limit the width so the logo doesn’t dominate the card */
+  max-width: 12rem;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
 }
 .provider‑body .links‑title {
   font-size: 0.875rem;

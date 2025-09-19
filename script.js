@@ -118,6 +118,11 @@
         "Monitor the status in <strong>Phone Numbers → Transfer Orders</strong>. Once you receive the FOC date, plan for a cutover in the late morning (8–9 AM PT).",
         "After the port completes, verify inbound and outbound calling and then cancel the service with the losing carrier."
       ],
+      // Display image at the top of the details section.  In lieu of provider‑specific
+      // portal screenshots (which may be proprietary), we reuse the Cloud Warriors
+      // logo as a placeholder to reinforce branding.  Replace this with actual
+      // screenshots if available.
+      image: "cloud-warriors-logo.png"
     },
     {
       key: "goto",
@@ -141,6 +146,7 @@
         "Submit the order and track status under <strong>Port Orders</strong>. Use temporary numbers for call forwarding and outbound CNAM while waiting.",
         "On the FOC date, expect a business‑day cutover with a 0–3 hour window; test calls and then notify your old carrier that you’ve ported."
       ],
+      image: "cloud-warriors-logo.png"
     },
     {
       key: "msteams",
@@ -165,6 +171,7 @@
         "Submit the order; Microsoft will validate and send it to the losing carrier. Monitor status in <strong>Voice → Port orders</strong>.",
         "On the confirmed date/time, verify that inbound and outbound calls work in Teams. Then cancel your old service as needed."
       ],
+      image: "cloud-warriors-logo.png"
     },
     {
       key: "8x8",
@@ -187,6 +194,7 @@
         "Submit the order and monitor the case via the 8x8 support portal. Respond promptly if they request additional documentation.",
         "On the scheduled day, expect a brief cutover window (15–30 min) during business hours. Test the numbers once they appear in your 8x8 account and then notify the losing carrier of completion."
       ],
+      image: "cloud-warriors-logo.png"
     },
     {
       key: "zoom",
@@ -209,6 +217,7 @@
         "Monitor the port status under <strong>Phone Numbers → Port History</strong>. Zoom will confirm the FOC date. Assign the porting numbers to users/sites in advance.",
         "On port day (11:30 AM ET for US/CA), test inbound and outbound calls. Once complete, cancel service with the losing carrier and update emergency settings if necessary."
       ],
+      image: "cloud-warriors-logo.png"
     },
   ];
 
@@ -432,6 +441,15 @@
       timingRow.appendChild(timingLabel);
       timingRow.appendChild(timingValue);
       body.appendChild(timingRow);
+
+      // Provider image (optional)
+      if (provider.image) {
+        const img = document.createElement("img");
+        img.className = "provider‑image";
+        img.src = provider.image;
+        img.alt = provider.name + " image";
+        body.appendChild(img);
+      }
 
       // Docs
       const docsDiv = document.createElement("div");
